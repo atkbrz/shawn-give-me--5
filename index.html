@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <p id="text">
-        </p>
-        <script type="text/javascript">
-            let doxInfo;
-            let i = 0;
-            function typeText() {
-                if (i <= doxInfo.length-1) {
-                    if (doxInfo.charAt(i) == "\n") {
-                        document.getElementById("text").innerHTML += "<br />";
-                    }
-                    else {
-                        document.getElementById("text").innerHTML += doxInfo.charAt(i);
-                    }
-                    i++;
-                }
-                setTimeout(typeText, 40);
-            }
-            async function getIP() {
-                try {
-                    const response = await fetch('https://ipapi.co/json');
-                    data = await response.json();
-                    doxInfo = "IP: " + data.ip + "\nLatitude: " + data.latitude + "\nLongitude: " + data.longitude + "\nPostal code: " + data.postal + "\nCity: " + data.city + "\nRegion: " + data.region + "\nCountry: " + data.country_name + "\nContinent: " + data.continent_code + "\nTimezone: " + data.timezone + "\nUTC: " + data.utc_offset + "\nCurrency: " + data.currency + "\nASN: " + data.asn + "\nISP: " + data.org;
-                }
-                catch (err) {
-                    text = "Error: " + err;
-                    console.log("Error: " + err);
-                }
-            }
-        </script>
-      <p>
+<div class="findiptitle">Your Information</div><div id="findipwidget"></div><div class="findiplink" id="findipurl">Powered by <a href="http://www.find-ip.net/" target="_blank">Find-IP.net</a></div><script defer src="https://api.find-ip.net/widget.js?width=240&"></script>
         <video controls="controls" width="1280" height="720">
 <source src="https://img.guildedcdn.com/ContentMediaGenericFiles/7808f2cdc383d71f4a08592dd438a5ee-Full.mp4?w=1080&amp;h=1920"/>
         </video>
