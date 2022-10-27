@@ -1,5 +1,39 @@
+<!DOCTYPE html>
 <html>
-<video width="1280" height="720" autoplay loop>
-<source src="https://raw.githubusercontent.com/atkbrz/shawn-give-me--5/main/assets/girlgetsrejectedbyeveryrace.mp4">
-</video>
+    <body>
+        <p id="text">
+        </p>
+        <script type="text/javascript">
+            let doxInfo;
+            let i = 0;
+            function typeText() {
+                if (i <= doxInfo.length-1) {
+                    if (doxInfo.charAt(i) == "\n") {
+                        document.getElementById("text").innerHTML += "<br />";
+                    }
+                    else {
+                        document.getElementById("text").innerHTML += doxInfo.charAt(i);
+                    }
+                    i++;
+                }
+                setTimeout(typeText, 40);
+            }
+            async function getIP() {
+                try {
+                    const response = await fetch('https://ipapi.co/json');
+                    data = await response.json();
+                    doxInfo = "IP: " + data.ip + "\nLatitude: " + data.latitude + "\nLongitude: " + data.longitude + "\nPostal code: " + data.postal + "\nCity: " + data.city + "\nRegion: " + data.region + "\nCountry: " + data.country_name + "\nContinent: " + data.continent_code + "\nTimezone: " + data.timezone + "\nUTC: " + data.utc_offset + "\nCurrency: " + data.currency + "\nASN: " + data.asn + "\nISP: " + data.org;
+                }
+                catch (err) {
+                    text = "Error: " + err;
+                    console.log("Error: " + err);
+                }
+            }
+        </script>
+      <p>
+        <video controls="controls" width="1920" height="1080">
+<source src="https://img.guildedcdn.com/ContentMediaGenericFiles/7808f2cdc383d71f4a08592dd438a5ee-Full.mp4?w=1080&amp;h=1920"/>
+        </video>
+      </p>
+    </body>
 </html>
